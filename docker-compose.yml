@@ -1,0 +1,49 @@
+services:
+  wordpress:
+    build:
+      context: ./docker/php
+    container_name: wordpress
+    depends_on:
+      mysql:
+        condition: service_healthy
+    volumes:
+      - .:/var/www/html
+    networks:
+      - wpnet
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    depends_on:
+      - wordpress
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - wpnet
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppassword
+      MYSQL_ROOT_PASSWORD: root
+    command: host_cache_size=0
+    volumes:
+      - ./db_data:/var/lib/mysql
+      - ./docker/mysql/disable-host-cache.sql:/docker-entrypoint-initdb.d/disable-host-cache.sql:ro
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - wpnet
+
+networks:
+  wpnet:
