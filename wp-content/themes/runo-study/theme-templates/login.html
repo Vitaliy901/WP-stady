@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+		<meta name="description" content="Form for login"> 
+		<meta name="keywords" content="login, account, email">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Lora&family=Roboto&display=swap" as="style">
+		<link rel="preload" as="style" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Lora&family=Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<title>Log in</title>
+		<link rel="shortcut icon" href="img/favicon/favicon.ico">
+	</head>
+	<body>
+
+		<div class="login">
+			<div class="login__left">
+				<a class="onix-logo" href="https://onix.kr.ua/"></a>
+				<img src="img/form_runo_img.jpg"
+					srcset="img/form_runo_img2x.jpg 2x" 
+					alt="Runo img">
+			</div>
+			<div class="login__right">
+				<div class="form-wrapper">
+					<div class="logo-wrapper">
+						<a href="index.html">RUNO</a>
+					</div>
+					<form class="form" action="#" method="POST">
+						<fieldset>
+							<legend>Login to your account</legend>
+							<label for="email">Email</label>
+							<input class="input"
+							id="email" 
+							type="email" 
+							name="email"
+							pattern="\S+@[a-z]+\.[a-z]+" autofocus required>
+							<label for="pass">Password</label>
+							<input class="input" 
+							id="pass" 
+							type="password" 
+							name="password" 
+							minlength="8" required>
+							<div class="form__rf-wrapper">
+								<label>
+									<input type="checkbox" name="remember">
+									<span>Remember me</span>
+								</label>
+								<a class="link" href="#">Forgot password?</a>
+							</div>
+							<input class="button" type="submit" value="Log in">
+							<input class="button button_black" type="button" value="Sign in with Google">
+							<div class="links-wrapper">
+								<span>
+									Don’t have an account?
+								</span>
+								<a class="link" href="registration.html">Register</a>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

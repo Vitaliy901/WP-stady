@@ -1,0 +1,1 @@
+$(".slider").slick({infinite:!0,cssEase:"ease-out",speed:1e3,arrows:!1,pauseOnHover:!0,centerMode:!0,centerPadding:"0px",centerMode:!0,slidesToShow:3,responsive:[{breakpoint:1200,settings:{slidesToShow:2,autoplay:!0,autoplaySpeed:2500}},{breakpoint:768,settings:{centerMode:!1,slidesToShow:1,autoplay:!0,autoplaySpeed:2500}}]});
