@@ -1,0 +1,1 @@
+const inputFile=document.querySelector("#file"),buttonFile=document.querySelector(".button-file");let buttonCont=buttonFile.innerHTML;inputFile.addEventListener("change",(function(e){this.files.length>0?buttonFile.innerHTML="File selected":buttonFile.innerHTML=buttonCont}),!1);

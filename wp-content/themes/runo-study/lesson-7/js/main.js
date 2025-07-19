@@ -1,0 +1,1 @@
+$(".fade").slick({dots:!0,infinite:!0,speed:1700,fade:!0,cssEase:"linear",autoplay:!0,autoplaySpeed:6e3,arrows:!1,pauseOnHover:!1});

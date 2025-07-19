@@ -1,0 +1,1 @@
+window.addEventListener("load",(function(o){this.scroll({top:600,behavior:"smooth"})}));
